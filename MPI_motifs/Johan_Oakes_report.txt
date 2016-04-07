@@ -1,0 +1,9 @@
+Johan Oakes
+
+Question - Motif/Sequences Lab
+
+1. My results showed the for a given set of motifs file, speed up increased when P increased. This is probably due to the fact that multiple processes could run through the algorithm quickly since they had a a smaller, and smaller, portion of the data. However, for a sequence distribution, each process had a relative large portion of the data to run against a smaller set, due to overhead of message passing and other factors, speedup took a toll.
+
+2.  It seems that when I increase P, efficiency decreases on both counts. This is probably due to overkill of the problem. Since message-passing is expensive, the expense of having more processors working on the problem rises higher.  
+
+3. Motif-distribution seemed much more efficient. This is due to the fact that we are splitting up a bigger portion of the problem size between processes so that they have to run through a larger problem size in searching for a match. When the problem size grows exponentially, speedup and efficiency also grew. With sequence-distribution, a process was doing very little work, thus the message passing going on was too expensive and seemed to do more harm than good. This is provided by the graphs on the RunningTimesTable.

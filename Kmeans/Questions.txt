@@ -1,0 +1,7 @@
+Johan Oakes
+Parallel Programming: Implementing K-Means Clustering with Pthreads
+
+4. Questions
+1. As S grows with a fixed P, the change in speedup varied for my results. I am guessing that S-values do not play a big role in determing performance, but clusters instead play a larger role. 
+2. When S is fixed and P increases, the change in speedup decreases. I believe this is happening since more threads have to wait due to barriers and mutex locks even though work between each thread decreases. The communication overhead is too high in comparison to the decrease in work.  
+3. As for the same reason stated above, efficienly is lost due to the overhead of creating and handling more threads. 
