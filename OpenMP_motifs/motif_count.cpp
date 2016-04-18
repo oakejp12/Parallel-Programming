@@ -34,7 +34,7 @@ int main(int argc, char* argv[]) {
   vector<string> sequences;
 
   if (argc != 5) {
-    cout << "In correct number of arguments!" << endl;
+    cout << "In correct number of arguments!" << '\n';
     exit(11);
   }
 
@@ -45,7 +45,7 @@ int main(int argc, char* argv[]) {
     ifstream inSequences (argv[3]);
 
     if (!in_motifs.is_open()) {
-      cout << "System could not open file!" << endl;
+      cout << "System could not open file!" << '\n';
       exit(4);
     }
 
@@ -53,7 +53,7 @@ int main(int argc, char* argv[]) {
 
       // Read motifs file here
       in_motifs >> M >> K_M;
-      cout << "There are " << M << " motifs, each of length " << K_M << "!" << endl;
+      cout << "There are " << M << " motifs, each of length " << K_M << "!" << '\n';
 
       string x; // Placeholder char
       while(in_motifs >> x)
@@ -61,17 +61,17 @@ int main(int argc, char* argv[]) {
     }
 
     if (!inSequences.is_open()) {
-      cout << "System could not read sequences file!" << endl;
+      cout << "System could not read sequences file!" << '\n';
       exit(4);
     }
 
     else {
       // Read sequences file here
       inSequences >> S >> K_S;
-      cout << "There are " << S << " sequences of length " << K_S << "!" << endl;
+      cout << "There are " << S << " sequences of length " << K_S << "!" << '\n';
 
       if (K_S != K_M) {
-        cout << "Motif character lengths do not match!" << endl;
+        cout << "Motif character lengths do not match!" << '\n';
         exit(1);
       }
 
@@ -103,16 +103,16 @@ int main(int argc, char* argv[]) {
   #pragma omp master
   {
       ofstream output(argv[4]);
-      output << matches.size() << endl;
+      output << matches.size() << '\n';
       for (auto x : matches) {
-        output << x.first << ", " << x.second << endl;
+        output << x.first << ", " << x.second << '\n';
       }
 
       output.close();
   }
 
-  cout << "Elapsed time: " << etime() << endl;
-  cout << "Ending main program!" << endl;
+  cout << "Elapsed time: " << etime() << '\n';
+  cout << "Ending main program!" << '\n';
   return 0;
 }
 
